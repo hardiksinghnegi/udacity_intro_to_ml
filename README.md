@@ -1,2 +1,4 @@
-# udacity_intro_to_ml
-Mini projects and scripts from Udacity Machine Learning MOOC
+ud120-projects
+==============
+
+Starter project code for students taking Udacity ud120
