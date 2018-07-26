@@ -3,6 +3,8 @@
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -27,15 +29,19 @@ plt.ylabel("grade")
 plt.show()
 ################################################################################
 
-
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
 
+clf = KNeighborsClassifier(n_neighbors=1)
+clf.fit(features_train, labels_train)
 
 
+pred_labels = clf.predict(features_test)
 
+prediction_accuracy = accuracy_score(labels_test, pred_labels)
 
+print prediction_accuracy
 
 
 try:
